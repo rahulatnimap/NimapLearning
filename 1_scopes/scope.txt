@@ -1,0 +1,9 @@
+scope - acess and visibility.
+
+benefit - security , access from certain area 
+
+
+types - 
+global - not inside any block (curly brackets)
+function - 
+block 
