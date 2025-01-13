@@ -10,18 +10,20 @@ const Stopwatch = () => {
   let timer;
   let hour = Math.floor(time / (1000 * 60 * 60))
   let minutes = Math.floor(time / (1000 * 60) % 60)
-  let seconds = Math.floor(time / (1000)   % 60)
+  let seconds = Math.floor(time / (1000) % 60)
   let milisec = Math.floor((time % 1000) / 10)
 
 
+  
+
   useEffect(() => {
-    if(flag) {
-        intervalIDRef.current = setInterval(()=> {
-          setTime(Date.now() - starttimeRef.current)
-        },10)
+    if (flag) {
+      intervalIDRef.current = setInterval(() => {
+        setTime(Date.now() - starttimeRef.current)
+      }, 10)
     }
-  return () => clearInterval(intervalIDRef.current);
-}, [flag])
+    return () => clearInterval(intervalIDRef.current);
+  }, [flag])
 
 
 
@@ -31,7 +33,7 @@ const Stopwatch = () => {
   //   }, 1000);
   // }
   const handleFlags = () => {
-         setFlag(false)
+    setFlag(false)
 
   }
   const handleFlag = () => {
@@ -41,16 +43,16 @@ const Stopwatch = () => {
 
   }
 
-  
+
   return (
     <div className='body'>
-        <h1 className='timer'>{`${minutes}/${seconds}/${milisec}`}</h1>     
+      <h1 className='timer'>{`${minutes}/${seconds}/${milisec}`}</h1>
       <div className='Btn'>
-      <button onClick={handleFlag}>Start</button>
-      <button onClick={handleFlags}>Stop</button>
-      <button onClick={() => {
-        setTime(0)
-      }}>Reset</button>
+        <button onClick={handleFlag}>Start</button>
+        <button onClick={handleFlags}>Stop</button>
+        <button onClick={() => {
+          setTime(0)
+        }}>Reset</button>
       </div>
 
 
