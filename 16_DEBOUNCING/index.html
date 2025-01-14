@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debouncing</title>
+</head>
+<style>
+    div{
+        margin: 30% 30%;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        padding: 20px;
+        flex-direction: column;
+        
+    }
+</style>
+<body>
+    <div>
+        <h1>Debouncing</h1>
+        <input type="text" onchange="handleDelay()">
+        <p> withoutDelay: <span class="without">test</span></p>
+        <p> withDelay: <span class="with"></span></p>
+        <p> withThrottling: <span class="withThrottling"></span></p>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
