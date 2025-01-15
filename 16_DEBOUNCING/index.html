@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,4 +26,100 @@
     </div>
 </body>
 <script src="./script.js"></script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debouncing & Throttling</title>
+</head>
+
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    .box {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: #03030e;
+        background-color: #4c2f6f;
+        padding: 40px 60px;
+    }
+
+    .box button {
+        width: 90px;
+    }
+</style>
+
+<body>
+
+
+
+    <h1>Debouncing & Throttling</h1>
+
+    <div class="box">
+        <button class="btn">Click me</button>
+        <p>Numer of times Actally clicked : <span class="actual">0</span></p>
+        <p>Numer of times Debounch happened : <span class="debounch">0</span></p>
+        <p>Numer of times Throttling happened : <span class="throttling">0</span></p>
+
+    </div>
+
+    <script>
+        let btn = document.querySelector(".btn")
+        let actuals = document.querySelector(".actual");
+        let debounchs = document.querySelector(".debounch");
+        let throttlings = document.querySelector(".throttling");
+        let counter = 0
+        let flag = false
+        function handleBtn() {
+            counter++
+            actuals.textContent = counter++
+        }
+
+        let timer ;
+        function handleDelay(d){
+            console.log(timer , "first");    
+          if (timer) clearTimeout(timer)
+          timer = setTimeout(()=>{
+                debounchs.textContent = actuals.textContent
+            console.log(timer , counter , "middle");
+
+            }, d)
+            console.log(timer , "second");
+
+        }
+
+        function handleThrottling(){
+             if (flag) return 
+            throttlings.textContent = actuals.textContent
+            flag = true
+               setTimeout(()=>{
+                flag = false
+            }, 900)
+        }
+
+
+        btn.addEventListener("click", handleBtn)
+        btn.addEventListener("click", ()=>handleDelay(900))
+        btn.addEventListener("click", handleThrottling)
+
+
+
+
+
+    </script>
+</body>
+
+
+
 </html>

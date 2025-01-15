@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        text-align: center;
+    }
+    .box{
+        width: 30%;
+        height: 300px;
+        display: flex;
+        border: red 2px solid ;
+        align-items: center;
+        flex-direction: column;
+    }
+    .box button {
+        margin: 50%;
+        width: 90px;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <h1><strong>Stop Propagation</strong></h1>
+    <div class="box">
+        <Button>Click Me</Button>
+    </div>
+
+    <script>
+        const btn = document.querySelector("button")
+        const box = document.querySelector(".box")
+        btn.addEventListener("click"  ,(e)=> e.stopPropagation() )
+        box.addEventListener("click" , function(){this.style.backgroundColor = "red" ; console.log("clicked");
+         })
+    </script>
+</body>
+</html>
