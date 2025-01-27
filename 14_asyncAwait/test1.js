@@ -5,23 +5,23 @@
     },4000)
  })
 
- const twn = new Promise((res , rej) => {
-    setTimeout(()=>{
-       res(5)
-    },10000)
- })
+ 
 
 const handleAwait = async () => {
-
     console.log(1);
     console.log(2);
     const threeval = await three
     console.log(threeval);
     console.log(4);   
     console.log(6);
-    
-    
 }
+
+
+const twn = new Promise((res , rej) => {
+   setTimeout(()=>{
+      res(5)
+   },10000)
+})
 
 async function test(){
     console.log("test");

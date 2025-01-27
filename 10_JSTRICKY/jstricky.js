@@ -166,13 +166,22 @@
 
 /////////////////////////////////////////
 
-var x = 10 ;
+// var x = 10 ;
 
-function inc(x){
-x++;
-return x
+// function inc(x){
+// x++;
+// return x
+// }
+
+// const res = inc(x)
+// console.log(x);
+
+/////////////////////////////////////////
+
+function closex(){
+    let x = 0; // New `x` is created every time `example()` is called
+x++
+    console.log(x);
 }
-
-const res = inc(x)
-console.log(x);
-
+closex();
+closex();
